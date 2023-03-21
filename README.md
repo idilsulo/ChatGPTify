@@ -51,7 +51,7 @@ os.environ['SPOTIFY_REDIRECT_URI']  = "Redirect URI"
 
 For a sample usage of the script, run
 ```
-python3 spotify_playlist.py
+python3 run.py
 ```
 
 ## Examples
