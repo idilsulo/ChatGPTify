@@ -2,6 +2,13 @@
 
 Maybe you have already tried asking for song recommendations to ChatGPT, but wouldn't it be nice if you could listen the playlists recommended based on your music taste directly on your Spotify account?
 
+<p align="center">
+<img src=assets/playlist.jpg  width="500">
+</p>
+
+> **ChatGPT Playlist reasoning:** The playlist "Electronic Odyssey" consists of electronic dance music tracks that share several common themes, musical elements, and features. These tracks are characterized by their pulsing beats, hypnotic rhythms, and driving basslines that create an intense and immersive listening experience.  One common theme in this playlist is the use of repetition, which is a hallmark of electronic music. The tracks often feature looping melodies, hypnotic arpeggios, and other repetitive elements that create a sense of momentum and progression. This repetition is often used to build tension and energy, leading to cathartic drops and climactic moments.  Another common feature of these tracks is their use of synthesizers and other electronic instruments to create a wide range of sounds and textures. The tracks often feature lush pads, soaring leads, and intricate percussion that are layered and manipulated to create complex and evolving soundscapes. 
+
+
 This repository is built with Python and uses [spotipy](https://github.com/spotipy-dev/spotipy) and [chatgpt-wrapper](https://github.com/mmabrouk/chatgpt-wrapper) for creating playlists based on user prompts via [ChatGPT](https://openai.com/blog/chatgpt) model.
 
 
