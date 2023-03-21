@@ -1,5 +1,5 @@
 
-from utils import *
+from chatgptify import *
 
 # os.environ['SPOTIFY_CLIENT_ID']     = "Spotify Client ID"
 # os.environ['SPOTIFY_CLIENT_SECRET'] = "Spotify Client Secret"

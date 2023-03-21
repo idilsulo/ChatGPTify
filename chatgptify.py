@@ -4,6 +4,7 @@ from spotipy.oauth2 import SpotifyOAuth
 from chatgpt_wrapper import ChatGPT
 import textwrap
 
+
 class SpotifyTrack():
     def __init__(self, uri, name, artist, album):
         self.uri = uri
