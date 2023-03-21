@@ -30,6 +30,7 @@ This will then open up a browser window. Log in to ChatGPT in the browser window
 
 
 **Step 4:** Setup credentials
+
 This can be done via executing the following commands on Terminal.
 ```
 export SPOTIFY_CLIENT_ID="Spotify Client ID"
