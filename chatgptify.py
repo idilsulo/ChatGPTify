@@ -46,7 +46,7 @@ class SpotifyPlaylist():
             raise RuntimeError(message)
 
         if prompt_type == "playlist": self.playlist_response = response
-        if prompt_type == "name": self.name = response.replace('"','')
+        if prompt_type == "name": self.name = str(response.replace('"',''))
         self.last_response = response
         
         if display:
@@ -63,7 +63,7 @@ class SpotifyPlaylist():
     
 
     def create_playlist(self):
-        query = self.playlist_response.split('\n\n')[2].split('\n')
+        query = self.playlist_response[self.playlist_response.find('1.'):].split('\n\n')[0].split('\n')
         query = [q[q.find('. ')+2:].replace('"', '') for q in query]
 
         print("Creating playlist...")
@@ -75,7 +75,7 @@ class SpotifyPlaylist():
                 track = SpotifyTrack(uri=item['uri'], name=item['name'], artist=item['artists'], album=item['album'])
                 playlist.append(track)
             except:
-                print("Track not found: ", q)
+                print("Track not found. ")
 
         self.playlist = playlist
 
