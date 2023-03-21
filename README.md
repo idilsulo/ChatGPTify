@@ -20,7 +20,13 @@ playwright install firefox
 chatgpt install
 ```
 
-**Note:** The final command will then log in with your browser. If you encounter any issues regarding ChatGPT wrapper installation, please refer to [chatgpt-wrapper](https://github.com/mmabrouk/chatgpt-wrapper).
+This will then open up a browser window. Log in to ChatGPT in the browser window, walk through all the intro screens and then exit.
+
+```
+1> /exit
+```
+
+**Note:**  If you encounter any issues regarding ChatGPT wrapper installation, please refer to [chatgpt-wrapper](https://github.com/mmabrouk/chatgpt-wrapper).
 
 
 **Step 4:** Setup credentials
