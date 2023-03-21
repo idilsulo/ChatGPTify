@@ -1,6 +1,6 @@
 # ChatGPTify = 🤖 ChatGPT x Spotify 🎧
 
-Maybe you have already tried asking or song recommendations to ChatGPT, but wouldn't it be nice if you could listen the playlists recommended based on your music taste directly on your Spotify account?
+Maybe you have already tried asking for song recommendations to ChatGPT, but wouldn't it be nice if you could listen the playlists recommended based on your music taste directly on your Spotify account?
 
 This repository is built with Python and uses [spotipy](https://github.com/spotipy-dev/spotipy) and [chatgpt-wrapper](https://github.com/mmabrouk/chatgpt-wrapper) for creating playlists based on user prompts via [ChatGPT](https://openai.com/blog/chatgpt) model.
 
