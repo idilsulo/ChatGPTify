@@ -70,12 +70,21 @@ class SpotifyPlaylist():
         playlist = []
         for q in query:
             try:
-                r = self.sp.search(q)
+                if 'by' in q:
+                    name, artist = q.split(' by ')
+                    search_q = "{}%10artist:{}".format(name, artist)
+                    r = self.sp.search(search_q)
+                elif '-' in q:
+                    name, artist = q.split(' - ')
+                    search_q = "{}%10artist:{}".format(name, artist)
+                    r = self.sp.search(search_q)
+                else:
+                    r = self.sp.search(q)
                 item = r['tracks']['items'][0]  # Select the first track
                 track = SpotifyTrack(uri=item['uri'], name=item['name'], artist=item['artists'], album=item['album'])
                 playlist.append(track)
             except:
-                print("Track not found. ")
+                print("Track not found.")
 
         self.playlist = playlist
 
