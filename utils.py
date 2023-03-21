@@ -45,7 +45,7 @@ class SpotifyPlaylist():
             raise RuntimeError(message)
 
         if prompt_type == "playlist": self.playlist_response = response
-        if prompt_type == "name": self.name = response
+        if prompt_type == "name": self.name = response.replace('"','')
         self.last_response = response
         
         if display:
