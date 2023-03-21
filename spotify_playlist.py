@@ -10,7 +10,7 @@ if __name__ == "__main__":
 
     play = SpotifyPlaylist()
 
-    # Ask for a playlist to Chat-GPT similar to a style of an artist, a genre and so on
+    # Ask for a playlist to ChatGPT similar to a style of an artist, a genre and so on
     # Provide: prompt_type = playlist
     # Examples:
     #   - similar to the style of Quantic and Thievery Corporation without including these artists

@@ -18,9 +18,9 @@ class SpotifyPlaylist():
         scope = scope = 'playlist-modify-public playlist-modify-private user-library-read'
         
         self.bot =  ChatGPT()
-        self.sp  = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=os.environ['SPOTIPY_CLIENT_ID'],
-                                               client_secret=os.environ['SPOTIPY_CLIENT_SECRET'],
-                                               redirect_uri=os.environ['SPOTIPY_REDIRECT_URI'],
+        self.sp  = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=os.environ['SPOTIFY_CLIENT_ID'],
+                                               client_secret=os.environ['SPOTIFY_CLIENT_SECRET'],
+                                               redirect_uri=os.environ['SPOTIFY_REDIRECT_URI'],
                                                scope=scope))
 
         self.playlist = None
@@ -82,7 +82,7 @@ class SpotifyPlaylist():
         print("Saving to library...")
 
         if not name: name = self.name
-        
+
         user_id = self.sp.current_user()['id']
         self.sp.user_playlist_create(user=user_id, name=name, public=True)
 
