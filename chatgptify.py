@@ -72,6 +72,7 @@ class SpotifyPlaylist():
             try:
                 if 'by' in q:
                     name, artist = q.split(' by ')
+                    if '-' in artist: artist = artist[:artist.find('-')]
                     search_q = "{}%10artist:{}".format(name, artist)
                     r = self.sp.search(search_q)
                 elif '-' in q:
