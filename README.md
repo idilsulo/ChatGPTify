@@ -45,6 +45,8 @@ os.environ['SPOTIFY_CLIENT_SECRET'] = "Spotify Client Secret"
 os.environ['SPOTIFY_REDIRECT_URI']  = "Redirect URI"
 ```
 
+**Important:** Make sure to set the same Redirect URI on your Spotify Developer account as well. This can be done under `Dashboard > App > Edit Settings > Redirect URIs`.
+
 ## Usage 
 
 For a sample usage of the script, run
