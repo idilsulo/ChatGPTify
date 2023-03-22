@@ -97,4 +97,6 @@ You can also ask the reasoning behind this playlist by asking the common element
 play.ask_chatgpt(prompt="What is the common theme, musical elements or features in this playlist? Explain in detail.")
 ```
 
+**Note:** If you would like to have better quality predictions, try executing `pkill firefox` and then `chatgpt install` once in a while.
+
 Enjoy your new playlists!
