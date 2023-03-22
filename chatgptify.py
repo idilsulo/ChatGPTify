@@ -14,8 +14,7 @@ class SpotifyTrack():
 
 
 class SpotifyPlaylist():
-    def __init__(self) -> None:
-        
+    def __init__(self) -> None:      
         scope = scope = 'playlist-modify-public playlist-modify-private user-library-read'
         
         self.bot =  ChatGPT()
@@ -31,7 +30,28 @@ class SpotifyPlaylist():
         self.last_response = None
     
 
-    def ask_chatgpt(self, prompt : str, prompt_type : str = "", display=True):
+    def ask_chatgpt(self, prompt : str, prompt_type : str = "", display=True) -> None:
+        """Ask prompt to ChatGPT
+
+        Args:
+            prompt (str): User prompt to ask. 
+                * prompt_type = "playlist" - A fixed start string is appended: 
+                    "Provide a playlist containing songs " ...
+                * prompt_type = "name" - Prompt is fixed, provided string is not considered
+                    "What might be a suitable and creative name for this playlist?" \
+                     " Only provide the name and no other details."
+                * prompt_type = "" - User can ask any prompt
+            
+            prompt_type (str, optional): Selects the type of prompt. Defaults to "".
+                * prompt_type = "playlist" - For playlist song suggestion
+                * prompt_type = "name"     - For playlist name suggestion
+                * prompt_type = ""         - Unrestricted prompts 
+
+            display (bool, optional): Whether to display ChatGPT output. Defaults to True.
+
+        Raises:
+            RuntimeError: Upon ChatGPT execution failure.
+        """        
         print("Asking ChatGPT...")
         
         if prompt_type == "playlist": 
@@ -62,7 +82,9 @@ class SpotifyPlaylist():
             print("-" * width)
     
 
-    def create_playlist(self):
+    def create_playlist(self) -> None:
+        """Queries Spotify API to retrieve tracks 
+        """        
         query = self.playlist_response[self.playlist_response.find('1.'):].split('\n\n')[0].split('\n')
         query = [q[q.find('. ')+2:].replace('"', '') for q in query]
 
@@ -82,7 +104,8 @@ class SpotifyPlaylist():
                 else:
                     r = self.sp.search(q)
                 item = r['tracks']['items'][0]  # Select the first track
-                track = SpotifyTrack(uri=item['uri'], name=item['name'], artist=item['artists'], album=item['album'])
+                track = SpotifyTrack(uri=item['uri'], name=item['name'], 
+                                     artist=item['artists'], album=item['album'])
                 playlist.append(track)
             except:
                 print("Track not found.")
@@ -90,7 +113,13 @@ class SpotifyPlaylist():
         self.playlist = playlist
 
     
-    def save_playlist(self, name : str = ""):
+    def save_playlist(self, name : str = "") -> None:
+        """Saves the created playlist under user account
+
+        Args:
+            name (str, optional): Name of the playlist. Uses the name created by ChatGPT or
+                default name when not specified
+        """
         print("Saving to library...")
 
         if not name: name = self.name
