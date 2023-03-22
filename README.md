@@ -41,8 +41,8 @@ This will then open up a browser window. Log in to ChatGPT in the browser window
 This can be done via executing the following commands on Terminal.
 ```
 export SPOTIFY_CLIENT_ID="Spotify Client ID"
-export SPOTIFY_CLIENT_SECRET"Spotify Client Secret"
-export SPOTIFY_REDIRECT_URI= "Redirect URI, e.g. http://localhost:8080"
+export SPOTIFY_CLIENT_SECRET="Spotify Client Secret"
+export SPOTIFY_REDIRECT_URI="Redirect URI, e.g. http://localhost:8080"
 ```
 
 OR, can be modified inside the Python script, `spotify_playlist.py`:
