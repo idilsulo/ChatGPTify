@@ -61,7 +61,42 @@ For a sample usage of the script, run
 python3 run.py
 ```
 
+### Prompting for Playlists
+
+Custom user prompts can be provided in a way that they will complete the following sentence: 
+`"Provide a playlist containing songs..."`
+```
+python3 run.py --PROMPT "falling under the genre downtempo and trip-hop" 
+```
+
+This will create the playlist and save it with a ChatGPT-generated name. If you instead would like to save it with a custom name, this can be provided with `--PLAYLIST_NAME` flag.
+
+**Note:** Using this option will **NOT** use or share your previously listened artists with ChatGPT.
+
+### Prompting for Playlists with User Data / Listening History
+
+If you would like to share your previously listened artists and get playlists with new artist recommendations, simply use:
+```
+python3 run.py --USER_DATA True --TERM long_term --TOP_GENRE 1
+```
+
+This will create playlist that are similar to but (mostly) not including your top-listened artists in the past years. The time range (term) and top genre selection can be made in the following way:
+
+```
+--TERM      "long_term"    # past years
+            "medium_term   # past 6 months
+            "short_term    # past 4 weeks
+    
+--TOP_GENRE 1              # top (most-listened) genre
+            2              # second most listened genre
+            3              # third most listened genre
+```
+
+**Note:** If you would like to have better quality predictions, try executing `pkill firefox` and then `chatgpt install` once in a while.
+
 ## Examples
+
+Feel free to plug and play!
 
 ```
 play = SpotifyPlaylist()
@@ -96,7 +131,5 @@ You can also ask the reasoning behind this playlist by asking the common element
 ```
 play.ask_chatgpt(prompt="What is the common theme, musical elements or features in this playlist? Explain in detail.")
 ```
-
-**Note:** If you would like to have better quality predictions, try executing `pkill firefox` and then `chatgpt install` once in a while.
 
 Enjoy your new playlists!
