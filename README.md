@@ -45,7 +45,7 @@ export SPOTIFY_CLIENT_SECRET="Spotify Client Secret"
 export SPOTIFY_REDIRECT_URI="Redirect URI, e.g. http://localhost:8080"
 ```
 
-OR, can be modified inside the Python script, `spotify_playlist.py`:
+OR, can be modified inside the Python script, `run.py`:
 ```
 os.environ['SPOTIFY_CLIENT_ID']     = "Spotify Client ID"
 os.environ['SPOTIFY_CLIENT_SECRET'] = "Spotify Client Secret"
