@@ -15,7 +15,7 @@ class SpotifyTrack():
 
 class SpotifyPlaylist():
     def __init__(self) -> None:      
-        scope = scope = 'playlist-modify-public playlist-modify-private user-library-read'
+        scope = 'playlist-modify-public playlist-modify-private user-library-read'
         
         self.bot =  ChatGPT()
         self.sp  = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=os.environ['SPOTIFY_CLIENT_ID'],
