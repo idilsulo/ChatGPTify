@@ -40,17 +40,21 @@ This will then open up a browser window. Log in to ChatGPT in the browser window
 
 This can be done via executing the following commands on Terminal.
 ```
+export OPENAI_API_KEY="OPENAI API KEY"
 export SPOTIFY_CLIENT_ID="Spotify Client ID"
 export SPOTIFY_CLIENT_SECRET="Spotify Client Secret"
-export SPOTIFY_REDIRECT_URI="Redirect URI, e.g. http://localhost:8080"
+export SPOTIFY_REDIRECT_URI="Redirect URI, e.g. http://localhost:5001/spotify_auth"
 ```
 
 OR, can be modified inside the Python script, `run.py`:
 ```
+os.environ['OPENAI_API_KEY']     = "OPENAI API KEY"
 os.environ['SPOTIFY_CLIENT_ID']     = "Spotify Client ID"
 os.environ['SPOTIFY_CLIENT_SECRET'] = "Spotify Client Secret"
 os.environ['SPOTIFY_REDIRECT_URI']  = "Redirect URI"
 ```
+
+OR, create and .env file with the mentioned keys.
 
 **Important:** Make sure to set the same Redirect URI on your Spotify Developer account as well. This can be done under `Dashboard > App > Edit Settings > Redirect URIs`.
 
