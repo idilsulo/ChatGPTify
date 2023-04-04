@@ -21,9 +21,9 @@ This repository is built with Python and uses [spotipy](https://github.com/spoti
 **Step 3:** Install dependencies
 
 ```
-pip install spotipy
-pip install git+https://github.com/mmabrouk/chatgpt-wrapper
+pip install -r requirements.txt
 playwright install firefox
+export OPENAI_API_KEY=[YOUR_KEY]
 chatgpt install
 ```
 

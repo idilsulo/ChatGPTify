@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Flask Form Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#submit-btn').click(function () {
+                var name = $('#name').val();
+                var email = $('#email').val();
+                var data = {
+                    'name': name,
+                    'email': email
+                };
+                $.ajax({
+                    url: '/submit',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(data),
+                    success: function (response) {
+                        alert(response.message);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Hello {{ name }}!</h1>
+    <a href="{{ spotify_url }}">Login Spotify</a>
+    <h1>Create a new playlist:</h1>
+    <form action="/create_playlist" method="post">
+        <!--PLAYLIST NAME-->
+        <label for="playlist_name">Playlist Name (leave empty to chatgpt generate):</label>
+        <input type="text" id="playlist_name" name="playlist_name"><br><br>
+        <!--TERM-->
+        <label for="term">Include Songs from Term:</label>
+        <br>
+        <input type="radio" id="short" name="term" value="short">
+        <label for="short">Short Term (4 weeks)</label><br>
+        <input type="radio" id="medium" name="term" value="medium">
+        <label for="medium">Medium Term (6 months)</label><br>
+        <input type="radio" id="long" name="term" value="long" checked>
+        <label for="long">Long Term (past few years)</label><br><br>
+        <br>
+        <!--TERM-->
+        <label for="top_genre">Include Songs from Top Nth Genre:</label>
+        <input type="number" id="top_genre" name="top_genre" min="1" max="3" value="1"  style="width: 50px;"><br><br>
+        <br>
+        <!--PROMPT-->
+        <label for="prompt">Prompt:</label>
+        <textarea id="prompt" name="prompt" rows="4" cols="50">similar to the ones created by Daniel Avery</textarea><br><br>
+        <!--SUBMIT BUTTON-->
+        <input type="submit" value="Create Playlist">
+    </form>
+
+    Go to playlist:
+    <div>
+        {{playlist_url}}
+    </div>
+
+    Analysis:
+    <div>
+        {{analysis}}
+    </div>
+
+    Prompt Sent:
+    <div>
+        {{sent_prompt}}
+    </div>
+
+    Answer Recieved:
+    <div>
+        {{recieved_answer}}
+    </div>
+
+
+</body>
+
+</html>
