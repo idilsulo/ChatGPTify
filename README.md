@@ -14,13 +14,7 @@ This repository is built with Python and uses [spotipy](https://github.com/spoti
 
 ## Installation
 
-**Step 1:** Create an [OpenAI account](https://beta.openai.com/account/api-keys) and set up credentials.
-
-The Open API key can be obtained from [here](https://platform.openai.com/account/api-keys). Then, simply export the key into your local environment:
-
-```
-export OPENAI_API_KEY=<SECRET_KEY>
-```
+**Step 1:** Create an [OpenAI account](https://beta.openai.com/account/api-keys)
 
 **Step 2:** Generate [Spotify Client ID & Secret Key](https://developer.spotify.com/dashboard/login)
 
@@ -28,7 +22,7 @@ export OPENAI_API_KEY=<SECRET_KEY>
 
 ```
 pip install spotipy
-pip install git+https://github.com/mmabrouk/chatgpt-wrapper
+pip install git+https://github.com/mmabrouk/chatgpt-wrapper@18f3903cc083a794ec1b4e55e82f0e7ac5184f35
 playwright install firefox
 chatgpt install
 ```
@@ -42,7 +36,7 @@ This will then open up a browser window. Log in to ChatGPT in the browser window
 **Note:**  If you encounter any issues regarding ChatGPT wrapper installation, please refer to [chatgpt-wrapper](https://github.com/mmabrouk/chatgpt-wrapper).
 
 
-**Step 4:** Setup credentials for Spotify API
+**Step 4:** Setup credentials
 
 This can be done via executing the following commands on Terminal.
 ```
