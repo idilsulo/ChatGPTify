@@ -22,7 +22,7 @@ This repository is built with Python and uses [spotipy](https://github.com/spoti
 
 ```
 pip install spotipy
-pip install git+https://github.com/mmabrouk/chatgpt-wrapper
+pip install git+https://github.com/mmabrouk/chatgpt-wrapper@18f3903cc083a794ec1b4e55e82f0e7ac5184f35
 playwright install firefox
 chatgpt install
 ```
