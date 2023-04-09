@@ -1,7 +1,7 @@
 import os
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
-from chatgpt_wrapper import ChatGPT
+from chatgpt_wrapper import OpenAIAPI
 import textwrap
 
 
@@ -17,7 +17,7 @@ class SpotifyPlaylist():
     def __init__(self) -> None:      
         scope = 'playlist-modify-public playlist-modify-private user-library-read'
         
-        self.bot =  ChatGPT()
+        self.bot =  OpenAIAPI()
         self.sp  = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=os.environ['SPOTIFY_CLIENT_ID'],
                                                client_secret=os.environ['SPOTIFY_CLIENT_SECRET'],
                                                redirect_uri=os.environ['SPOTIFY_REDIRECT_URI'],
