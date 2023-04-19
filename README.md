@@ -16,7 +16,7 @@ This repository is built with Python and uses [spotipy](https://github.com/spoti
 
 **Step 1:** Create an [OpenAI account](https://beta.openai.com/account/api-keys)
 
-**Step 2:** Generate [Spotify Client ID & Secret Key](https://developer.spotify.com/dashboard/login)
+**Step 2:** Generate [Spotify Client ID & Secret Key](https://developer.spotify.com/dashboard/login) and set a Redirect URI under your App settings, e.g. `http://localhost:8080`.
 
 **Step 3:** Install dependencies
 
