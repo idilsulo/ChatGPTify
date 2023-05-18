@@ -24,7 +24,7 @@ class SpotifyPlaylist():
                                                scope=scope))
 
         self.playlist = None
-        self.name = "Chat-GPT presents..."
+        self.name = "ChatGPT presents..."
 
         self.playlist_response = None
         self.last_response = None
@@ -72,7 +72,7 @@ class SpotifyPlaylist():
         if display:
             width = 70
             print("-" * width)
-            print("     " * (width // 11) + "Chat-GPT")
+            print("     " * (width // 11) + "ChatGPT")
             prompt_str = textwrap.fill("Prompt: " + prompt)
             print(prompt_str)
             print("-" * width)
@@ -108,7 +108,7 @@ class SpotifyPlaylist():
                                      artist=item['artists'], album=item['album'])
                 playlist.append(track)
             except:
-                print("Track not found.")
+                print("Track not found: {}".format(q))
 
         self.playlist = playlist
 
